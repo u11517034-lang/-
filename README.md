@@ -3,7 +3,7 @@
 嗨！這裡是我的第一個個人網站專案，紀錄我的網頁開發探索歷程！✨
 
 ## 🌐 網站傳送門
-👉 [點我立即造訪網站！]([https://u11517034-lang.github.io/](https://u11517034-lang.github.io/-/))
+👉 [點我立即造訪網站！]([file:///Users/chien/Desktop/%E5%A4%A7%E5%AD%B8/%E6%95%B8%E4%BD%8D%E7%A7%91%E6%8A%80%E6%A6%82%E8%AB%96/%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99/index.html)
 
 ---
 
