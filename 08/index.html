@@ -1,0 +1,59 @@
+活動 05 觀察：我把卡片的 padding 改為 32px，所以內容離卡片邊框更遠，看起來更有呼吸感。
+活動 06 觀察：我選 D 版型，因為希望讀者先從左側導覽列看起，右側保留較大的空間閱讀長文。
+活動 07 觀察：我選 object-fit: cover，因為可以讓所有封面圖片高度一致且不變形，雖然邊緣會被微裁切，但排版最整齊。
+活動 08 觀察：在窄視窗看到卡片內容被擠壓；修正後，加上 @media 讓卡片在 600px 以下變成單欄，閱讀體驗變好了。
+活動 09 觀察：在 WAVE 檢測中，發現灰字白底對比度過低，我將顏色改深（如 #243d46）以提高可讀性，並補上了 label 的 for 屬性。
+
+我選擇的活動：活動 08 響應式網頁 (RWD)
+原本有什麼問題，或我想改善什麼：原本的網頁寫死了固定寬度 (width: 960px)，導致用手機看的時候，畫面會超出螢幕，必須左右滑動，卡片也擠在一起。
+完成了哪些修改：
+1. 將 .page 的 width 改成 100%，並加上 max-width: 960px。
+2. 將 input 寬度改為 100%，限制 max-width: 420px。
+3. 加上了 @media (max-width: 600px) 的設定，讓 .cards 在手機版變成 grid-template-columns: 1fr;（單欄）。
+我如何檢查，實際看到什麼結果：我用瀏覽器打開網頁，將視窗慢慢縮窄。看到原本並排的三張卡片，在視窗變窄時自動變成上下排列的單欄，而且沒有出現橫向捲軸，文字都能完整閱讀。
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動 08：響應式網頁設計</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; background: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+        /* 1. 將固定寬度改成 100%，並設定最大寬度，讓手機版不會超出畫面 */
+        .page { width: 100%; max-width: 960px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+        .card { background: #ecf0f1; padding: 15px; border-radius: 6px; }
+        input { width: 100%; max-width: 420px; padding: 8px; box-sizing: border-box; }
+        
+        /* 2. 這是 RWD 的靈魂：當螢幕寬度小於 600px 時，卡片變成單欄上下排列 */
+        @media (max-width: 600px) {
+            .cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>我的響應式作品集</h1>
+        <p>請試著縮放瀏覽器視窗，觀察下方卡片的排列變化。</p>
+        
+        <label for="email">訂閱電子報：</label>
+        <input type="text" id="email" placeholder="輸入 Email">
+
+        <div class="cards">
+            <div class="card">
+                <h3>作品一</h3>
+                <p>在寬螢幕下，我們三個會並排在一起。到了手機版，我就會變成第一排。</p>
+            </div>
+            <div class="card">
+                <h3>作品二</h3>
+                <p>響應式設計（RWD）讓網頁能自動適應不同尺寸的螢幕。</p>
+            </div>
+            <div class="card">
+                <h3>作品三</h3>
+                <p>不會因為螢幕太小而讓字被切斷，或是需要左右滑動才能看完。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
