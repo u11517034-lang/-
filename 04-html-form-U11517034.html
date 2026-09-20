@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放學後社團體驗表</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f0f4f8; color: #333; max-width: 600px; margin: 40px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); line-height: 1.8; }
+        h1 { color: #2b6cb0; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; }
+        .notice { background: #fffaf0; color: #dd6b20; padding: 10px 15px; border-radius: 8px; font-size: 0.9em; margin-bottom: 20px; border-left: 4px solid #ed8936; }
+        label { font-weight: bold; color: #2c5282; display: block; margin-bottom: 5px; }
+        input[type="text"], select, textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; box-sizing: border-box; font-family: inherit; margin-bottom: 20px; }
+        fieldset { border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 20px; background: #f7fafc; }
+        legend { font-weight: bold; color: #2c5282; background: #fff; padding: 0 8px; border: 1px solid #e2e8f0; border-radius: 4px; }
+        fieldset label { font-weight: normal; color: #4a5568; display: inline-block; margin-right: 15px; margin-bottom: 0; cursor: pointer; }
+        button { background: #a0aec0; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-size: 1em; cursor: not-allowed; width: 100%; font-weight: bold; }
+        .custom-note { font-size: 0.85em; color: #718096; margin-top: -10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>放學後社團體驗表</h1>
+    <p class="notice">這是介面練習，資料不會送出或保存，不能當成正式報名。</p>
+
+    <!-- 暱稱：單行文字輸入框 -->
+    <label for="nickname">我的暱稱</label>
+    <input type="text" id="nickname" name="nickname" placeholder="提示：例如小星星">
+
+    <!-- 社團：下拉選單 -->
+    <label for="club">想體驗的社團</label>
+    <select id="club" name="club">
+        <option value="">請選擇社團</option>
+        <option value="story">故事劇場</option>
+        <option value="science">科學手作</option>
+        <option value="boardgame">桌遊挑戰</option>
+    </select>
+
+    <!-- 日期：單選按鈕 (name 必須一樣才能互斥單選) -->
+    <fieldset>
+        <legend>方便參加的日子</legend>
+        <label><input type="radio" name="day" value="tue"> 星期二</label>
+        <label><input type="radio" name="day" value="thu"> 星期四</label>
+        <label><input type="radio" name="day" value="fri"> 星期五</label>
+    </fieldset>
+
+    <!-- 活動方式：複選方塊 (可同時勾選多個) -->
+    <fieldset>
+        <legend>我期待的活動方式</legend>
+        <label><input type="checkbox" name="style" value="make"> 動手製作</label>
+        <label><input type="checkbox" name="style" value="coop"> 和同學合作</label>
+        <label><input type="checkbox" name="style" value="share"> 上台分享</label>
+    </fieldset>
+
+    <!-- 自行新增的欄位：接送方式 (單選) -->
+    <fieldset>
+        <legend>活動結束後的接送方式</legend>
+        <label><input type="radio" name="pickup" value="parent"> 家長親自接送</label>
+        <label><input type="radio" name="pickup" value="walk"> 學生自行回家</label>
+    </fieldset>
+    <p class="custom-note">說明：我新增了「接送方式」的單選按鈕，因為放學後的活動需要確認學生的回家安全；使用單選按鈕能確保家長只能選擇一種最確定的交通方式，避免多選造成混淆。</p>
+
+    <!-- 留言：多行文字輸入區 -->
+    <label for="message">想告訴老師的事</label>
+    <textarea id="message" name="message" rows="5" placeholder="提示：例如我想和同學一起完成一個小作品"></textarea>
+
+    <!-- 送出按鈕：設定 disabled 停用 -->
+    <button type="button" disabled>練習版，尚未開放報名</button>
+
+</body>
+</html>

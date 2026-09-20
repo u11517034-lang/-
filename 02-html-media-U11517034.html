@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校園自然觀察任務卡</title>
+    <style>
+        /* 沿用剛剛的乾淨排版，並針對圖片/影片稍微美化 */
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f0f4f8; color: #333; max-width: 700px; margin: 40px auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); line-height: 1.8; }
+        h1 { color: #2b6cb0; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; }
+        h2 { color: #319795; margin-top: 30px; font-size: 1.3rem; }
+        img, video, audio { max-width: 100%; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        audio { box-shadow: none; }
+        /* 替透明去背圖做一個方格底板，方便觀察透明效果 */
+        .transparent-bg { background-image: radial-gradient(#cbd5e0 1px, transparent 1px); background-size: 20px 20px; padding: 20px; border-radius: 8px; display: inline-block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>校園自然觀察任務卡</h1>
+    <p>今天我們用眼睛觀察，也用文字記錄發現。</p>
+
+    <h2>任務一：看看葉脈</h2>
+    <p>觀察葉片圖片，找出葉脈延伸的方向。</p>
+    <!-- 使用 width="240" 並加上 alt 替代文字 -->
+    <img src="media-02/leaf-photo.png" alt="清晨陽光透過綠色葉片，清楚呈現葉脈的 AI 生成圖片" width="240">
+
+    <h2>任務二：準備開始</h2>
+    <p>按下播放，聽到三個由低到高的短音後，開始你的觀察。</p>
+    <!-- audio 加入 controls 才會顯示播放器 -->
+    <audio src="media-02/notice.wav" controls></audio>
+    <p style="font-size: 0.9em; color: #718096;">（開始觀察的提示音）</p>
+
+    <h2>任務三：觀察花朵</h2>
+    <p>播放短片，看看花朵怎麼移動，再用一句話描述。影片中的花朵會隨著縮時攝影緩緩綻放。</p>
+    <!-- video 加入 controls 顯示播放器，設定寬度 300 -->
+    <video src="media-02/flower.mp4" controls width="300"></video>
+
+    <hr style="margin: 40px 0; border: none; border-top: 1px solid #e2e8f0;">
+
+    <!-- 以下是講義要求保留的圖片格式展示區塊 -->
+    <h2>透明 PNG 測試</h2>
+    <div class="transparent-bg">
+        <img src="media-02/flower-transparent.png" alt="透明背景的粉紅花朵與枝葉，AI 生成圖片" width="240">
+    </div>
+
+    <h2>船長的一週行事曆 (SVG)</h2>
+    <img src="media-02/captain-calendar.svg" alt="船長的一週行事曆，重點行程見下方文字" width="700">
+    <p style="font-size: 0.9em; color: #718096;">文字版行程：週一補給、週三航行、週五靠岸。</p>
+
+</body>
+</html>

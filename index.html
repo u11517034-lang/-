@@ -3,69 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的材料系個人作品集</title>
+    <title>活動 08：響應式網頁設計</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; }
-        header { background: #1a365d; color: white; padding: 40px 20px; text-align: center; border-radius: 8px; }
-        section { background: white; margin-top: 20px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        h2 { color: #1a365d; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
-        .tag { background: #e2e8f0; padding: 4px 8px; border-radius: 4px; font-size: 0.9em; margin-right: 5px; }
+        body { font-family: sans-serif; line-height: 1.6; background: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+        /* 1. 將固定寬度改成 100%，並設定最大寬度，讓手機版不會超出畫面 */
+        .page { width: 100%; max-width: 960px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+        .card { background: #ecf0f1; padding: 15px; border-radius: 6px; }
+        input { width: 100%; max-width: 420px; padding: 8px; box-sizing: border-box; }
         
-        /* 卡片樣式 */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 15px; }
-        .card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; background: #ffffff; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: block; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .card h3 { margin-top: 0; color: #2b6cb0; }
-        .card p { font-size: 0.95em; color: #4a5568; margin-bottom: 0; }
-
-        footer { text-align: center; margin-top: 30px; color: #718096; font-size: 0.9em; }
+        /* 2. 這是 RWD 的靈魂：當螢幕寬度小於 600px 時，卡片變成單欄上下排列 */
+        @media (max-width: 600px) {
+            .cards { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
+    <div class="page">
+        <h1>我的響應式作品集</h1>
+        <p>請試著縮放瀏覽器視窗，觀察下方卡片的排列變化。</p>
+        
+        <label for="email">訂閱電子報：</label>
+        <input type="text" id="email" placeholder="輸入 Email">
 
-    <header>
-        <h1>我是 [簡]</h1>
-        <p>台北市立大學 學材系一年級 | 專注於前瞻材料與數位科技應用</p>
-    </header>
-
-    <section>
-        <h2>👨‍🎓 關於我</h2>
-        <p>你好！我是目前就讀台北市立大學 學材系一年級的大一新生。我對材料微觀結構、高分子材料以及如何結合「數位科技（如數據分析、模擬軟體）」來加速材料開發充滿熱情。</p>
-    </section>
-
-    <section>
-        <h2>🔬 專業技能與興趣</h2>
-        <p>
-            <span class="tag">材料科學基礎</span>
-            <span class="tag">Python 程式設計</span>
-            <span class="tag">數據分析</span>
-            <span class="tag">Git / GitHub</span>
-        </p>
-        <p>大四畢業目標：具備扎實的材料理論基礎，並能運用數位工具進行材料性質預測與數據視覺化，成為產業搶手的跨域研發人才。</p>
-    </section>
-
-    <!-- 新增的專案與作業卡片區塊 -->
-    <section>
-        <h2>💻 課程作品與作業</h2>
-        <div class="card-grid">
-            <a href="hw.html" class="card">
-                <h3>📚 數位科技概論作業</h3>
-                <p>包含 HTML 文字層級、多媒體應用、清單與表格、表單設計以及 CSS 視覺與排版練習記錄。</p>
-            </a>
+        <div class="cards">
+            <div class="card">
+                <h3>作品一</h3>
+                <p>在寬螢幕下，我們三個會並排在一起。到了手機版，我就會變成第一排。</p>
+            </div>
+            <div class="card">
+                <h3>作品二</h3>
+                <p>響應式設計（RWD）讓網頁能自動適應不同尺寸的螢幕。</p>
+            </div>
+            <div class="card">
+                <h3>作品三</h3>
+                <p>不會因為螢幕太小而讓字被切斷，或是需要左右滑動才能看完。</p>
+            </div>
         </div>
-    </section>
-
-    <section>
-        <h2>📫 聯絡方式</h2>
-        <ul>
-            <li>Email: 你的學號@gm.ntpu.edu.tw</li>
-            <li>GitHub: <a href="#" target="_blank">點此查看我的 GitHub</a></li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 [你的名字]. Built for Digital Technology Course.</p>
-    </footer>
-
+    </div>
 </body>
 </html>
